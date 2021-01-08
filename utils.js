@@ -24,3 +24,36 @@ const withSlots = projects => {
 };
 
 export const getAssignedProjects = projects => withSlots(withColors(projects));
+
+const getTotalSlices = assignedProjects =>
+	assignedProjects.reduce((acc, cur) => acc + cur.weight, 0);
+
+export const getSlices = assignedProjects => {
+	const totalSlices = getTotalSlices(assignedProjects);
+	const degPerSlice = Math.ceil(360 / totalSlices);
+	return Array(totalSlices)
+		.fill()
+		.map((n, i) => {
+			const proj = assignedProjects.filter(project =>
+				project.slots.includes(i)
+			)[0];
+			return {
+				name: proj.name,
+				color: proj.color,
+				initialAngle: `${degPerSlice * (i + 1)}deg`,
+			};
+		});
+};
+
+export const getBackgroundImage = slice =>
+	slice.initialAngle === '0deg'
+		? `conic-gradient(${slice.color} ${slice.initialAngle} ${
+				parseInt(slice.initialAngle, 10) + degPerSlice
+		  }deg, transparent ${
+				parseInt(slice.initialAngle, 10) + degPerSlice
+		  }deg 360deg)`
+		: `conic-gradient(transparent 0deg ${slice.initialAngle}, ${slice.color} ${
+				slice.initialAngle
+		  } ${parseInt(slice.initialAngle, 10) + degPerSlice}deg, transparent ${
+				parseInt(slice.initialAngle, 10) + degPerSlice
+		  }deg 360deg)`;

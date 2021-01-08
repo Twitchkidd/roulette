@@ -1,4 +1,4 @@
-import { log, getAssignedProjects } from './utils.js';
+import { getAssignedProjects, getSlices, getBackgroundImage } from './utils.js';
 
 const projects = [
 	{
@@ -21,46 +21,27 @@ const projects = [
 		name: 'Java MOOC',
 		weight: 1,
 	},
+	{
+		name: 'GarethTracker2000',
+		weight: 1,
+	},
+	{
+		name: 'DawaTracker3000000',
+		weight: 2,
+	},
 ];
 
 const init = () => {
+	// Add colors and random position ˇˇˇ
 	const assignedProjects = getAssignedProjects(projects);
-	const totalSlices = assignedProjects.reduce(
-		(acc, cur) => acc + cur.weight,
-		0
-	);
-	const degreesPerSlice = Math.ceil(360 / totalSlices);
-	const slices = Array(totalSlices)
-		.fill()
-		.map((n, i) => {
-			const proj = assignedProjects.filter(project =>
-				project.slots.includes(i)
-			)[0];
-			return {
-				name: proj.name,
-				color: proj.color,
-				initialAngle: `${degreesPerSlice * (i + 1)}deg`,
-			};
-		});
+	// Split out the projects object into individual roulette pieces ˇˇˇ
+	const slices = getSlices(assignedProjects);
+	// Populate the DOM, may it flourish ˇˇˇ
 	slices.forEach(slice => {
 		const el = document.createElement('div');
-		el.className = 'slice';
-		if (slice.initialAngle === '0deg') {
-			el.style.backgroundImage = `conic-gradient(${slice.color} ${
-				slice.initialAngle
-			} ${parseInt(slice.initialAngle, 10) + degreesPerSlice}deg, transparent ${
-				parseInt(slice.initialAngle, 10) + degreesPerSlice
-			}deg 360deg)`;
-		} else {
-			el.style.backgroundImage = `conic-gradient(transparent 0deg ${
-				slice.initialAngle
-			}, ${slice.color} ${slice.initialAngle} ${
-				parseInt(slice.initialAngle, 10) + degreesPerSlice
-			}deg, transparent ${
-				parseInt(slice.initialAngle, 10) + degreesPerSlice
-			}deg 360deg)`;
-		}
 		const projectName = document.createElement('span');
+		el.className = 'slice';
+		el.style.backgroundImage = getBackgroundImage(slice);
 		projectName.innerHTML = slice.name;
 		el.appendChild(projectName);
 		document.getElementById('roulette').appendChild(el);
