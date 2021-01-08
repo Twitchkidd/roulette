@@ -1,0 +1,19 @@
+{
+	"name": "roulette",
+	"version": "1.0.0",
+	"description": "",
+	"main": "getSlotAssignedProjects.js",
+	"scripts": {
+		"start": "yarn run snowpack dev",
+		"build": "yarn run snowpack build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"snowpack": "^2.18.5"
+	},
+	"dependencies": {
+		"html-colors": "^0.0.6"
+	}
+}
