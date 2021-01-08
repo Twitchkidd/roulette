@@ -28,9 +28,11 @@ export const getAssignedProjects = projects => withSlots(withColors(projects));
 const getTotalSlices = assignedProjects =>
 	assignedProjects.reduce((acc, cur) => acc + cur.weight, 0);
 
+const getDegPerSlice = totalSlices => Math.ceil(360 / totalSlices);
+
 export const getSlices = assignedProjects => {
 	const totalSlices = getTotalSlices(assignedProjects);
-	const degPerSlice = Math.ceil(360 / totalSlices);
+	const degPerSlice = getDegPerSlice(totalSlices);
 	return Array(totalSlices)
 		.fill()
 		.map((n, i) => {
@@ -40,20 +42,27 @@ export const getSlices = assignedProjects => {
 			return {
 				name: proj.name,
 				color: proj.color,
-				initialAngle: `${degPerSlice * (i + 1)}deg`,
+				initialAngle: `${degPerSlice * i}deg`,
 			};
 		});
 };
 
-export const getBackgroundImage = slice =>
-	slice.initialAngle === '0deg'
-		? `conic-gradient(${slice.color} ${slice.initialAngle} ${
-				parseInt(slice.initialAngle, 10) + degPerSlice
-		  }deg, transparent ${
-				parseInt(slice.initialAngle, 10) + degPerSlice
-		  }deg 360deg)`
-		: `conic-gradient(transparent 0deg ${slice.initialAngle}, ${slice.color} ${
-				slice.initialAngle
-		  } ${parseInt(slice.initialAngle, 10) + degPerSlice}deg, transparent ${
-				parseInt(slice.initialAngle, 10) + degPerSlice
-		  }deg 360deg)`;
+export const getBackgroundImage = ({ assignedProjects, slice }) => {
+	const totalSlices = getTotalSlices(assignedProjects);
+	const degPerSlice = getDegPerSlice(totalSlices);
+	if (slice.initialAngle === '0deg') {
+		return `conic-gradient(${slice.color} ${slice.initialAngle} ${
+			parseInt(slice.initialAngle, 10) + degPerSlice
+		}deg, transparent ${
+			parseInt(slice.initialAngle, 10) + degPerSlice
+		}deg 360deg)`;
+	} else {
+		return `conic-gradient(transparent 0deg ${slice.initialAngle}, ${
+			slice.color
+		} ${slice.initialAngle} ${
+			parseInt(slice.initialAngle, 10) + degPerSlice
+		}deg, transparent ${
+			parseInt(slice.initialAngle, 10) + degPerSlice
+		}deg 360deg)`;
+	}
+};

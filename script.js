@@ -41,7 +41,7 @@ const init = () => {
 		const el = document.createElement('div');
 		const projectName = document.createElement('span');
 		el.className = 'slice';
-		el.style.backgroundImage = getBackgroundImage(slice);
+		el.style.backgroundImage = getBackgroundImage({ assignedProjects, slice });
 		projectName.innerHTML = slice.name;
 		el.appendChild(projectName);
 		document.getElementById('roulette').appendChild(el);
