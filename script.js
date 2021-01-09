@@ -1,4 +1,12 @@
-import { getAssignedProjects, getSlices, getBackgroundImage } from './utils.js';
+import {
+	log,
+	getAssignedProjects,
+	getSlices,
+	getBackgroundImage,
+	getTextColor,
+	standardize_color,
+	getDegPerSlice,
+} from './utils.js';
 
 const projects = [
 	{
@@ -39,10 +47,30 @@ const init = () => {
 	// Populate the DOM, may it flourish ˇˇˇ
 	slices.forEach(slice => {
 		const el = document.createElement('div');
-		const projectName = document.createElement('span');
 		el.className = 'slice';
 		el.style.backgroundImage = getBackgroundImage({ assignedProjects, slice });
+		el.style.border = `4px solid ${slice.borderColor}`;
+		const projectName = document.createElement('span');
 		projectName.innerHTML = slice.name;
+		const sliceColorHex = standardize_color(slice.color);
+		projectName.style.color = getTextColor(sliceColorHex, '#fefefe', '#14141d');
+		if (getTextColor(sliceColorHex, '#fefefe', '#14141d') !== '#14141d')
+			projectName.style['font-variation-settings'] = `"GRAD" 0.95`;
+		const degPerSlice = getDegPerSlice(slices.length);
+		const radToDeg = rad => (rad * Math.PI) / 180;
+		const abscissa = Math.round(
+			Math.sin(radToDeg(parseInt(slice.initialAngle, 10) + degPerSlice * 0.5)) *
+				170
+		);
+		const ordinate = Math.round(
+			Math.cos(radToDeg(parseInt(slice.initialAngle, 10) + degPerSlice * 0.5)) *
+				170
+		);
+		projectName.style.transform = `translate(${abscissa}px, ${
+			ordinate * -1
+		}px) rotate(${
+			parseInt(slice.initialAngle, 10) + 0.5 * degPerSlice - 90
+		}deg)`;
 		el.appendChild(projectName);
 		document.getElementById('roulette').appendChild(el);
 	});
