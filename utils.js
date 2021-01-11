@@ -7,7 +7,15 @@ export const log = function () {
 };
 
 const dontPickBackgroundColor = color =>
-	color === 'lightslategrey'
+	[
+		'pink',
+		'lightpink',
+		'hotpink',
+		'deeppink',
+		'palevioletred',
+		'mediumvioletred',
+		'lightcoral',
+	].includes(color)
 		? dontPickBackgroundColor(htmlColors.random())
 		: color;
 
@@ -49,6 +57,7 @@ export const getSlices = assignedProjects => {
 				project.slots.includes(i)
 			)[0];
 			return {
+				key: i,
 				name: proj.name,
 				color: proj.color,
 				borderColor: proj.borderColor,
@@ -105,4 +114,10 @@ export const standardize_color = str => {
 	var ctx = document.createElement('canvas').getContext('2d');
 	ctx.fillStyle = str;
 	return ctx.fillStyle;
+};
+
+export const spin = () => {
+	const roulette = document.getElementById('roulette');
+	roulette.style.transition = `transform 2s ease-in`;
+	roulette.style.transform = `rotate(-360deg)`;
 };

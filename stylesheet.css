@@ -9,19 +9,27 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	background: lightslategray;
+	background: #ee86b2;
 	font-family: 'Roboto Flex';
 }
 
 #container {
-	height: 100vh;
+	height: 90vh;
 	display: grid;
 	place-items: center;
 }
 
 header {
 	color: #fefefe;
-	font-size: 18;
+	font-size: 36px;
+	text-decoration: underline;
+}
+
+footer {
+	height: 10vh;
+	background: #f7b1ce;
+	display: grid;
+	place-items: center;
 }
 
 #roulette {
@@ -64,5 +72,7 @@ header {
 }
 
 button {
-	margin-bottom: 100px;
+	height: 8vh;
+	width: 12vh;
+	border-radius: 12px;
 }

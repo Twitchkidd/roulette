@@ -6,6 +6,7 @@ import {
 	getTextColor,
 	standardize_color,
 	getDegPerSlice,
+	spin,
 } from './utils.js';
 
 const projects = [
@@ -47,9 +48,11 @@ const init = () => {
 	// Populate the DOM, may it flourish ˇˇˇ
 	slices.forEach(slice => {
 		const el = document.createElement('div');
+		el.id = slice.key;
 		el.className = 'slice';
-		el.style.backgroundImage = getBackgroundImage({ assignedProjects, slice });
+		console.log(getBackgroundImage({ assignedProjects, slice }));
 		el.style.border = `4px solid ${slice.borderColor}`;
+		el.style.zIndex = slice.key;
 		const projectName = document.createElement('span');
 		projectName.innerHTML = slice.name;
 		const sliceColorHex = standardize_color(slice.color);
@@ -72,8 +75,12 @@ const init = () => {
 			parseInt(slice.initialAngle, 10) + 0.5 * degPerSlice - 90
 		}deg)`;
 		el.appendChild(projectName);
+		el.style.backgroundImage = getBackgroundImage({ assignedProjects, slice });
 		document.getElementById('roulette').appendChild(el);
 	});
+	// Add event listener(s) ˇˇˇ
+	const button = document.getElementById('spinButton');
+	button.addEventListener('click', spin);
 };
 
 init();
