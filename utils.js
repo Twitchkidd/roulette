@@ -116,8 +116,12 @@ export const standardize_color = str => {
 	return ctx.fillStyle;
 };
 
+let totalDegrees = 0;
+
 export const spin = () => {
 	const roulette = document.getElementById('roulette');
 	roulette.style.transition = `transform 2s ease-in`;
-	roulette.style.transform = `rotate(-360deg)`;
+	const degrees = Math.ceil(Math.random() * 360) + 15 * 360 + totalDegrees;
+	totalDegrees += degrees;
+	roulette.style.transform = `rotate(-${degrees}deg)`;
 };
