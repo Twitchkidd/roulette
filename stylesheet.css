@@ -402,8 +402,8 @@ a {
 	width: 600px;
 	border-radius: 50%;
 	position: relative;
-	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d,
-		inset 0px 0px 0px 1px #d0407d;
+	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d66,
+		inset 0px 0px 0px 1px #d0407d66;
 }
 
 #center {
@@ -445,12 +445,14 @@ button {
 	color: #f7b1ce;
 	font-size: larger;
 	font-variation-settings: 'GRAD' 0.3;
-	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d,
-		inset 0px 0px 0px 1px #d0407d;
+	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d66,
+		inset 0px 0px 0px 1px #d0407d66;
 	border: none;
 }
 
 button:active {
 	box-shadow: inset -4.08px -4.08px 4.08px #f7b1ce,
-		inset 6.125px 6.125px 4.08px rgba(174, 174, 192, 0.2);
+		inset 6.125px 6.125px 4.08px #d0407d66;
+	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d66,
+		inset 0px 0px 0px 1px #d0407d33;
 }
