@@ -6,7 +6,7 @@ export const log = function () {
 	console.log(`${key}: ${value}`);
 };
 
-const dontPickBackgroundColor = color =>
+export const dontPickBackgroundColor = color =>
 	[
 		'pink',
 		'lightpink',

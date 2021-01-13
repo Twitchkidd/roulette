@@ -375,9 +375,9 @@ body {
 header {
 	color: #fddfec;
 	font-size: 36px;
-	font-variation-settings: 'slnt' -5;
+	font-variation-settings: 'slnt' -10;
 	font-variation-settings: 'GRAD' -0.3;
-	font-stretch: 100;
+	font-stretch: 150%;
 	border-bottom: 2px dotted #d0407d;
 	border-right: 1px dotted #d0407d;
 	border-top: 1px dotted #fddfec;
@@ -400,25 +400,25 @@ a {
 #roulette {
 	height: 600px;
 	width: 600px;
-	background: transparent;
 	border-radius: 50%;
 	position: relative;
+	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d,
+		inset 0px 0px 0px 1px #d0407d;
 }
 
 #center {
-	height: 24px;
-	width: 24px;
+	height: 16px;
+	width: 16px;
 	position: absolute;
-	top: 288px;
-	left: 288px;
+	top: 292px;
+	left: 292px;
 	border-radius: 50%;
 	z-index: 9001;
-	background: #e26197;
 }
 
 .slice {
-	height: 600px;
-	width: 600px;
+	height: 592px;
+	width: 592px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -434,6 +434,7 @@ a {
 .slice > span::after,
 .slice > span::before {
 	content: '~';
+	margin: 4px;
 }
 
 button {
@@ -444,9 +445,8 @@ button {
 	color: #f7b1ce;
 	font-size: larger;
 	font-variation-settings: 'GRAD' 0.3;
-	box-shadow: -4.08px -4.08px 12.25px #f7b1ce,
-		6.125px 6.125px 12.25px rgba(174, 174, 192, 0.4),
-		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2);
+	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d,
+		inset 0px 0px 0px 1px #d0407d;
 	border: none;
 }
 
