@@ -11,15 +11,19 @@ import {
 
 const projects = [
 	{
-		name: 'master-blaster',
+		name: 'tech-resume',
 		weight: 2,
+	},
+	{
+		name: 'non-tech-resume',
+		weight: 1,
+	},
+	{
+		name: 'master-blaster',
+		weight: 1,
 	},
 	{
 		name: 'garethfield.com',
-		weight: 2,
-	},
-	{
-		name: 'MultiBounce',
 		weight: 1,
 	},
 	{
@@ -27,18 +31,52 @@ const projects = [
 		weight: 2,
 	},
 	{
-		name: 'Java MOOC',
-		weight: 1,
-	},
-	{
-		name: 'GarethTracker2000',
-		weight: 1,
-	},
-	{
 		name: 'DawaTracker3000000',
-		weight: 2,
+		weight: 1,
 	},
+	{
+		name: 'polar-pairs',
+		weight: 1,
+	},
+	{
+		name: 'dot-eater',
+		weight: 1,
+	},
+	// {
+	// 	name: 'MultiBounce',
+	// 	weight: 1,
+	// },
+	// {
+	// 	name: 'Java MOOC',
+	// 	weight: 1,
+	// },
 ];
+// const projects = [
+// 	{
+// 		name: 'gta',
+// 		weight: 2,
+// 	},
+// 	{
+// 		name: 'ttt',
+// 		weight: 2,
+// 	},
+// 	{
+// 		name: 'worms',
+// 		weight: 1,
+// 	},
+// 	{
+// 		name: 'chicky-d00',
+// 		weight: 2,
+// 	},
+// 	{
+// 		name: 'playps',
+// 		weight: 1,
+// 	},
+// 	{
+// 		name: 'rainbox-secvn',
+// 		weight: 1,
+// 	},
+// ];
 
 const init = () => {
 	// Add colors and random position ˇˇˇ

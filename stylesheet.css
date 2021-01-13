@@ -373,17 +373,28 @@ body {
 }
 
 header {
-	color: #fefefe;
+	color: #fddfec;
 	font-size: 36px;
-	font-feature-settings: ;
-	text-decoration: underline;
+	font-variation-settings: 'slnt' -5;
+	font-variation-settings: 'GRAD' -0.3;
+	font-stretch: 100;
+	border-bottom: 2px dotted #d0407d;
+	border-right: 1px dotted #d0407d;
+	border-top: 1px dotted #fddfec;
+	border-left: 2px dotted #fddfec;
+	padding: 8px;
+	border-radius: 8px;
 }
 
 footer {
 	height: 10vh;
-	background: #f7b1ce;
+	background: #d0407d;
 	display: grid;
 	place-items: center;
+}
+
+a {
+	color: #fddfec;
 }
 
 #roulette {
@@ -395,14 +406,14 @@ footer {
 }
 
 #center {
-	height: 12px;
-	width: 12px;
+	height: 24px;
+	width: 24px;
 	position: absolute;
-	top: 294px;
-	left: 294px;
-	background: #14141d;
+	top: 288px;
+	left: 288px;
 	border-radius: 50%;
 	z-index: 9001;
+	background: #e26197;
 }
 
 .slice {
@@ -428,5 +439,13 @@ footer {
 button {
 	height: 8vh;
 	width: 12vh;
-	border-radius: 12px;
+	border-radius: 24px;
+	background: #ee86b2;
+	color: #f7b1ce;
+	font-size: larger;
+	font-variation-settings: 'GRAD' 0.3;
+	box-shadow: -4.08px -4.08px 12.25px #f7b1ce,
+		6.125px 6.125px 12.25px rgba(174, 174, 192, 0.4),
+		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2);
+	border: none;
 }
