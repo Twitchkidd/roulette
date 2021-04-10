@@ -2,10 +2,10 @@
 	"name": "roulette",
 	"version": "1.0.0",
 	"description": "",
-	"main": "getSlotAssignedProjects.js",
+	"main": "",
 	"scripts": {
-		"start": "yarn run snowpack dev",
-		"build": "yarn run snowpack build",
+		"start": "yarn run snowpack dev --config ./snowpack.config.js",
+		"build": "yarn run snowpack build --config ./snowpack.config.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
