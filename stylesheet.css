@@ -351,6 +351,8 @@ template {
 	display: none;
 }
 
+/* >> Gareth's code! >> */
+
 @font-face {
 	font-family: 'Roboto Flex';
 	src: url('assets/RobotoFlex[slnt\,wdth\,wght\,opsz].ttf') format('truetype');
@@ -358,10 +360,19 @@ template {
 	font-stretch: 25% 151%;
 }
 
-html,
-body {
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
 	background: #ee86b2;
 	font-family: 'Roboto Flex';
 }
@@ -453,6 +464,4 @@ button {
 button:active {
 	box-shadow: inset -4.08px -4.08px 4.08px #f7b1ce,
 		inset 6.125px 6.125px 4.08px #d0407d66;
-	box-shadow: -4.08px -4.08px 12.25px #f7b1ce, 6.125px 6.125px 12.25px #d0407d66,
-		inset 0px 0px 0px 1px #d0407d33;
 }

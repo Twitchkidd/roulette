@@ -10,10 +10,10 @@
 	},
 	"author": "",
 	"license": "ISC",
-	"devDependencies": {
-		"snowpack": "^2.18.5"
-	},
 	"dependencies": {
 		"html-colors": "^0.0.6"
+	},
+	"devDependencies": {
+		"snowpack": "^2.18.5"
 	}
 }
