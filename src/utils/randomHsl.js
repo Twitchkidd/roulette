@@ -6,7 +6,10 @@
 // there actually, then saturation is a percent so 80-100%, and then
 // lightness should be weighted towards the middle, SO:
 
-export const randomHSL = () => {
+export const randomHSL = dice => {
+	if (typeof dice !== 'number') {
+		return new Error('Number of dice must be number!');
+	}
 	function getRandomIntInclusive(min, max) {
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 		min = Math.ceil(min);
@@ -23,6 +26,6 @@ export const randomHSL = () => {
 	}
 	const hue = getRandomIntInclusive(0, 255);
 	const saturation = getRandomIntInclusive(80, 100);
-	const lightness = weightedRandom(100, 50);
-	return `${hue} ${saturation} ${lightness}`;
+	const lightness = weightedRandom(100, dice);
+	return `${hue} ${saturation} ${Math.floor(lightness)}`;
 };

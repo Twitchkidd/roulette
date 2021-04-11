@@ -1,35 +1,19 @@
 import { projects } from './data';
+import { hslToHex } from './utils/hslToHex';
+import { randomHsl } from './utils/randomHsl';
 import {
 	dontPickBackgroundColor,
 	getAssignedProjects,
 	getSlices,
 	getBackgroundImage,
-	getTextColor,
 	standardize_color,
 	getDegPerSlice,
 	spin,
 } from './utils.js';
 
-// ToDo: Two Main Goals:
-// ? 1) Create other lists of tech.
-// 		` put the stack in Stack Roulette `
-// ? 2) ~~*~~*~~ Abstraction! ~~*~~*~~
-// 		`	         ^^^^^^^^^^^^           `
-
-// * 1) ~ Lists! ~
-// * 			- Projects
-// * 			- JS Frameworks/Vanilla
-// * 			- Backend Solutions
-// * 			- Individual Technologies
-// * 			- Design Tools
-// * 			- Career-y Stuff
-
 const init = () => {
-	// * Add colors and random position ˇˇˇ * //
 	const assignedProjects = getAssignedProjects(projects);
-	// * Split out the projects object into individual roulette pieces ˇˇˇ * //
 	const slices = getSlices(assignedProjects);
-	// * Populate the DOM, may it flourish ˇˇˇ * //
 	slices.forEach(slice => {
 		const el = document.createElement('div');
 		el.id = slice.key;
@@ -65,7 +49,6 @@ const init = () => {
 	document.getElementById('roulette').style.background = slices[0].color;
 	document.getElementById('center').style.background =
 		slices[slices.length - 1].borderColor;
-	// Add event listener(s) ˇˇˇ
 	const button = document.getElementById('spinButton');
 	button.addEventListener('click', spin);
 };
