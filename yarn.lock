@@ -758,13 +758,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-html-colors@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/html-colors/-/html-colors-0.0.6.tgz#1252f1fe098b4119b6e2c0a1f11b64c356c16306"
-  integrity sha512-GqpCiJ76oubrfRlpWsvKQ0LqwhUGwUaerlsIohfOcRq6lWrCJGM0/orciKl8PlSYPfulFE8rFGqqDl6A43t9ig==
-  dependencies:
-    unique-random-array "^1.0.0"
-
 htmlparser2@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-6.0.0.tgz#c2da005030390908ca4c91e5629e418e0665ac01"
@@ -1693,18 +1686,6 @@ unique-filename@^1.1.1:
   integrity sha512-Vmp0jIp2ln35UTXuryvjzkjGdRyf9b2lTXuSYUiPmzRcl3FDtYqAwOnTJkAngD9SWhnoJzDbTKwaOrZ+STtxNQ==
   dependencies:
     unique-slug "^2.0.0"
-
-unique-random-array@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/unique-random-array/-/unique-random-array-1.0.1.tgz#f29bda2a62be8860a703c4739c8f4fdb4d722cc7"
-  integrity sha512-z9J/SV8CUIhIRROcHe9YUoAT6XthUJt0oUyLGgobiXJprDP9O9dsErNevvSaAv5BkhwFEVPn6nIEOKeNE6Ck1Q==
-  dependencies:
-    unique-random "^1.0.0"
-
-unique-random@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/unique-random/-/unique-random-1.0.0.tgz#ce3e224c8242cd33a0e77b0d7180d77e6b62d0c4"
-  integrity sha1-zj4iTIJCzTOg53sNcYDXfmti0MQ=
 
 unique-slug@^2.0.0:
   version "2.0.2"

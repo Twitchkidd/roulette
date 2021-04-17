@@ -1,5 +1,3 @@
-import htmlColors from 'html-colors';
-
 // export const log = function () {
 // 	const key = Object.keys(this)[0];
 // 	const value = JSON.stringify(this[key], null, 2);
