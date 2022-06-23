@@ -1,6 +1,6 @@
-import { projects } from './data';
-import { hslToHex } from './utils/hslToHex';
-import { randomHsl } from './utils/randomHsl';
+import { projects } from './data.js';
+import { hslToHex } from './hslToHex.js';
+import { randomHSL } from './randomHsl.js';
 import {
 	dontPickBackgroundColor,
 	getAssignedProjects,
