@@ -1,0 +1,33 @@
+/* Thanks Kevin Powell! */
+
+.card::after {
+	content: '';
+	/* display stuff */
+	display: flex;
+	flex-direction: column;
+	/* positioning stuff */
+	position: absolute;
+	left: -15rem;
+	right: -15rem;
+	bottom: -15rem;
+	z-index: -1;
+	/* box model stuff */
+	height: 40rem;
+	max-height: 50rem;
+	min-height: 60rem;
+	width: 200px;
+	max-width: 300px;
+	padding: 3em;
+	margin: 2px;
+	border: 2px solid pink;
+	background: inherit;
+	background-color: blue;
+	/* typography */
+	/* manipulations */
+	transform: translateX(40);
+	filter: blur(39);
+	opacity: 0.5;
+	/* miscellaneous stuff */
+	border-radius: 50%;
+	box-shadow: 'all';
+}
